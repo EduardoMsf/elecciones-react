@@ -1,25 +1,16 @@
-import logo from './logo.svg'
-import './App.css'
 import { getData } from './helpers'
+import { AppTheme } from './theme'
 
-function App() {
+export const App = () => {
 
   const data = getData()
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        {data.map( (url, index) => (
-          <div key={index}> 
-            <img src={url} />
-          </div>
-        ))}
-      </header>
-    </div>
+    <AppTheme>
+      <div>
+        <h1>Hola democrático mundo, elecciones</h1>
+      </div>
+    </AppTheme>
   )
 }
-
-export default App
