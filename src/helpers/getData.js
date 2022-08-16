@@ -4,7 +4,7 @@ const baseURL = `https://res.cloudinary.com/dheyjds01/image/upload/v1660511296/C
 
 export const getData = () =>{
   const imageUrls = []
-  for(let index = 1; index<=20 ; index++){
+  for(let index = 1; index<=4 ; index++){
     imageUrls.push(`${baseURL}${index}.webp`)
   }
 

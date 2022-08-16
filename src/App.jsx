@@ -1,3 +1,4 @@
+import { ElectionsLayout } from './elections/layout/electionsLayout'
 import { getData } from './helpers'
 import { AppTheme } from './theme'
 
@@ -8,9 +9,7 @@ export const App = () => {
 
   return (
     <AppTheme>
-      <div>
-        <h1>Hola democrático mundo, elecciones</h1>
-      </div>
+      <ElectionsLayout />
     </AppTheme>
   )
 }
