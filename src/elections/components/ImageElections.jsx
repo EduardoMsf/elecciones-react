@@ -5,7 +5,6 @@ import { getData } from "../../helpers";
 export const ImageElections = () => {
 
   const images = getData()
-  //console.log(images)
   return (
     <ImageList sx={{ width: '100%', height: 400 }} cols={4} rowHeight={260}>
       {images?.map((image, index) => (
@@ -23,8 +22,6 @@ export const ImageElections = () => {
         </Grid>
       ))}
     </ImageList>
-    // <>
-    // </>
   );
 }
 

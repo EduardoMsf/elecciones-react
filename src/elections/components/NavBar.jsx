@@ -5,7 +5,6 @@ import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material"
 
 export const NavBar = ({ drawerWidth }) => {
 
-  console.log('navbar')
   return (
     <AppBar position="fixed" 
       sx={{
