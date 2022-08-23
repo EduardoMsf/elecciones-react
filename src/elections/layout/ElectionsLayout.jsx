@@ -15,13 +15,14 @@ export const ElectionsLayout = () => {
     <Box sx={{ display:'flex' }} className='animate__animated animate__fadeIn animate__faster'>
       <NavBar drawerWidth={drawerWidth}/>
       <Box direction='row' cols={3} component='main' sx={{flexGrow:1, p:3}}>
-        <Toolbar />
-        <ImageElections />
+        <Toolbar /> {/* <ImageElections />
+        */}
         {/* { images.map(image => 
           <CardElections image={image} />
         )
           
         } */}
+        <CardElections />
       </Box>
 
     </Box>
