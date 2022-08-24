@@ -13,9 +13,9 @@ export const CardElections = () => {
   return (
     <Grid display='flex'>
       { images.map( (image, index) =>
-        (<Card cols={4} sx={{ width:'100%', margin:'16px'}} key={index}>
+        (<Card cols={4} sx={{ width:'100%', margin:'16px', borderRadius: '16px'}} key={index}>
           <CardMedia
-            sx={{ width: '100%', height: 300 }}
+            sx={{ width: '100%', height: 300, borderRadius: '16px' }}
             component="img"
             alt="green iguana"
             height="140"
