@@ -1,11 +1,12 @@
 import { ElectionsLayout } from './elections/layout/electionsLayout'
+import { ElectionsRoutes } from './elections/routes/ElectionsRoutes'
 import { AppTheme } from './theme'
 
 export const App = () => {
 
   return (
     <AppTheme>
-      <ElectionsLayout />
+      <ElectionsRoutes />
     </AppTheme>
   )
 }

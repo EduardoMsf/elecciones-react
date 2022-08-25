@@ -17,6 +17,9 @@ export const blueTheme = createTheme({
     },
     black: {
       main: '#1B1B1B'
+    },
+    white: {
+      main: '#FFFFFF'
     }
   }
 })

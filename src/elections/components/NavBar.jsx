@@ -1,6 +1,8 @@
-import { MenuOutlined, LogoutOutlined } from "@mui/icons-material"
+import { Link as RouterLink } from 'react-router-dom'
+import { MenuOutlined, LogoutOutlined, HomeOutlined } from "@mui/icons-material"
 
-import { AppBar, Grid, IconButton, SwipeableDrawer, Toolbar, Typography } from "@mui/material"
+
+import { AppBar, Grid, IconButton, SwipeableDrawer, Toolbar, Typography, Link } from "@mui/material"
 import { useState } from "react"
 
 
@@ -30,11 +32,27 @@ export const NavBar = ({ drawerWidth }) => {
           <MenuOutlined />
         </IconButton>
         <SwipeableDrawer open={drawerSwitch} onClose={handleClickDrawer} onOpen={handleClickDrawer}>
-          <Typography sx={{ width:'240px'}} variant='h6' noWrap component='div'>Elemento del drawer ahshjakakhsadadsdsdas</Typography>
+          <Link 
+            component={ RouterLink } 
+            color="primary" 
+            to="/presidencia" 
+            sx={{textDecoration:"none", width:'240px'}}
+          >
+            Presidencia
+          </Link>
         </SwipeableDrawer>
+        <IconButton sx={{marginRight: '20px'}}>
+          <Link 
+            component={ RouterLink } 
+            color="primary" 
+            to="/" 
+            sx={{textDecoration:"none"}}
+          >
+            <HomeOutlined color='white' />
+          </Link>
+        </IconButton>
         <Grid container direction='row' justifyContent='space-between' alignItems='center'>
           <Typography variant='h6' noWrap component='div'>Elections App</Typography>
-
           <IconButton color='black'>
             <LogoutOutlined />
           </IconButton>
