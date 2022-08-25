@@ -18,6 +18,7 @@ export const NavBar = ({ drawerWidth }) => {
         width:{sm:'100%'},
         ml:{ sm: `${ drawerWidth }px`}
       }}
+      color='secondary'
     >
       <Toolbar>
         <IconButton
@@ -28,13 +29,13 @@ export const NavBar = ({ drawerWidth }) => {
         >
           <MenuOutlined />
         </IconButton>
-        <SwipeableDrawer open={drawerSwitch} onClose={handleClickDrawer}>
+        <SwipeableDrawer open={drawerSwitch} onClose={handleClickDrawer} onOpen={handleClickDrawer}>
           <Typography sx={{ width:'240px'}} variant='h6' noWrap component='div'>Elemento del drawer ahshjakakhsadadsdsdas</Typography>
         </SwipeableDrawer>
         <Grid container direction='row' justifyContent='space-between' alignItems='center'>
           <Typography variant='h6' noWrap component='div'>Elections App</Typography>
 
-          <IconButton color='error'>
+          <IconButton color='black'>
             <LogoutOutlined />
           </IconButton>
         </Grid>

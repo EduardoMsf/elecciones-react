@@ -7,10 +7,16 @@ export const blueTheme = createTheme({
       main: '#262254'
     },
     seconday: {
-      main: '#543884'
+      main: '#D93691'
+    },
+    success: {
+      main: '#2E7D32'
     },
     error: {
       main: red.A400
+    },
+    black: {
+      main: '#1B1B1B'
     }
   }
 })
