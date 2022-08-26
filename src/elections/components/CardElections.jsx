@@ -10,13 +10,14 @@ import { CardContent, Grid, Typography } from '@mui/material';
 import Swal from 'sweetalert2'
 import 'sweetalert2/dist/sweetalert2.css'
 
-export const CardElections = () => {
+export const CardElections = (props) => {
 
   const [checked, setChecked] = useState(false)
   const [imageUrl, setImageUrl] = useState('')
   const [userId, setUserId] = useState(-1)
   const [vote, setVote] = useState(false)
-  const images = getData()
+  const { indexId, lastIndexId, columns } = props
+  const images = getData(indexId, lastIndexId)
   const handleVoteChanged = (image, index) =>{
     setChecked(!checked)
     setImageUrl(image)
@@ -34,17 +35,12 @@ export const CardElections = () => {
     setUserId(-1)
     setVote(true)
   }
-
-  console.log('image',!!imageUrl)
-  console.log(checked)
-  console.log(userId)
-
   
   return (
     <Grid display='flex' flexDirection='column'>
       <Grid display='flex'>  
         { images.map( (image, index) =>
-          (<Card cols={4} sx={ (checked && userId == index) ? { width:'100%', margin:'16px', borderRadius: '16px', transform: 'scale(1.1)'} : { width:'100%', margin:'16px', borderRadius: '16px'}} key={index}>
+          (<Card cols={columns} sx={ (checked && userId == index) ? { width:'100%', margin:'16px', borderRadius: '16px', transform: 'scale(1.1)'} : { width:'100%', margin:'16px', borderRadius: '16px'}} key={index}>
             <CardMedia
               sx={(userId != -1 && userId != index ) ? { width: '100%', height: 300, borderRadius: '16px', opacity:'.5' } : { width: '100%', height: 300, borderRadius: '16px' }}
               component="img"

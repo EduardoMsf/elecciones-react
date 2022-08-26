@@ -2,11 +2,11 @@ import { Typography } from "@mui/material"
 import { CardElections } from "../components/CardElections"
 import { ElectionsLayout } from "../layout/electionsLayout"
 
-export const ElectionPresident = () => {
+export const ElectionDragQueen = () => {
   return (
     <ElectionsLayout>
-      <Typography variant='h6'>Candidatos a Presidencia del Mundo</Typography>
-      <CardElections indexId={1} lastIndexId={4} columns={4} />
+      <Typography variant='h6'>Candidatxs a la más draga</Typography>
+      <CardElections indexId={16} lastIndexId={20} columns={5} />
     </ElectionsLayout>
   )
 }

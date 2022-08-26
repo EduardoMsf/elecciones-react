@@ -40,8 +40,32 @@ export const NavBar = ({ drawerWidth }) => {
           >
             Presidencia
           </Link>
+          <Link 
+            component={ RouterLink } 
+            color="primary" 
+            to="/vice" 
+            sx={{textDecoration:"none", width:'240px'}}
+          >
+            Vice Presidencia
+          </Link>
+          <Link 
+            component={ RouterLink } 
+            color="primary" 
+            to="/senadores" 
+            sx={{textDecoration:"none", width:'240px'}}
+          >
+            Senadores
+          </Link>
+          <Link 
+            component={ RouterLink } 
+            color="primary" 
+            to="/drag" 
+            sx={{textDecoration:"none", width:'240px'}}
+          >
+            DragQueen
+          </Link>
         </SwipeableDrawer>
-        <IconButton sx={{marginRight: '20px'}}>
+        <IconButton sx={{marginRight: '20px', marginTop: '5px'}}>
           <Link 
             component={ RouterLink } 
             color="primary" 
@@ -49,7 +73,7 @@ export const NavBar = ({ drawerWidth }) => {
             sx={{textDecoration:"none"}}
           >
             <HomeOutlined color='white' />
-          </Link>
+          </Link> 
         </IconButton>
         <Grid container direction='row' justifyContent='space-between' alignItems='center'>
           <Typography variant='h6' noWrap component='div'>Elections App</Typography>
