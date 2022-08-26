@@ -1,7 +1,8 @@
 import { Link as RouterLink } from 'react-router-dom'
 import { MenuOutlined, LogoutOutlined, HomeOutlined } from "@mui/icons-material"
-
-
+import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
+import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
+import TurnedInNotOutlinedIcon from '@mui/icons-material/TurnedInNotOutlined';
 import { AppBar, Grid, IconButton, SwipeableDrawer, Toolbar, Typography, Link } from "@mui/material"
 import { useState } from "react"
 
@@ -38,6 +39,9 @@ export const NavBar = ({ drawerWidth }) => {
             to="/presidencia" 
             sx={{textDecoration:"none", width:'240px'}}
           >
+            <IconButton>
+              <TurnedInNotOutlinedIcon />
+            </IconButton>
             Presidencia
           </Link>
           <Link 
@@ -46,6 +50,9 @@ export const NavBar = ({ drawerWidth }) => {
             to="/vice" 
             sx={{textDecoration:"none", width:'240px'}}
           >
+            <IconButton>
+              <TurnedInNotOutlinedIcon />
+            </IconButton>
             Vice Presidencia
           </Link>
           <Link 
@@ -54,6 +61,9 @@ export const NavBar = ({ drawerWidth }) => {
             to="/senadores" 
             sx={{textDecoration:"none", width:'240px'}}
           >
+            <IconButton>
+              <TurnedInNotOutlinedIcon />
+            </IconButton>
             Senadores
           </Link>
           <Link 
@@ -62,6 +72,9 @@ export const NavBar = ({ drawerWidth }) => {
             to="/drag" 
             sx={{textDecoration:"none", width:'240px'}}
           >
+            <IconButton>
+              <VolunteerActivismOutlinedIcon />
+            </IconButton>
             DragQueen
           </Link>
         </SwipeableDrawer>
@@ -73,6 +86,16 @@ export const NavBar = ({ drawerWidth }) => {
             sx={{textDecoration:"none"}}
           >
             <HomeOutlined color='white' />
+          </Link> 
+        </IconButton>
+        <IconButton sx={{marginRight: '20px', marginTop: '5px'}}>
+          <Link 
+            component={ RouterLink } 
+            color="primary" 
+            to="/graphs" 
+            sx={{textDecoration:"none"}}
+          >
+            <AssessmentOutlinedIcon color='white' />
           </Link> 
         </IconButton>
         <Grid container direction='row' justifyContent='space-between' alignItems='center'>
