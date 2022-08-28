@@ -15,7 +15,10 @@ export const NavBar = ({ drawerWidth }) => {
   const handleClickDrawer = () =>{
     setDrawerSwitch(!drawerSwitch)
   }
-
+  
+  const handleRemoveVotes = () =>{
+    localStorage.clear()
+  }
   return (
     <AppBar position="fixed" 
       sx={{
@@ -111,8 +114,15 @@ export const NavBar = ({ drawerWidth }) => {
         </IconButton>
         <Grid container direction='row' justifyContent='space-between' alignItems='center'>
           <Typography variant='h6' noWrap component='div'>Elections App</Typography>
-          <IconButton color='black'>
-            <LogoutOutlined />
+          <IconButton color='black' onClick={handleRemoveVotes}>
+            <Link 
+              component={ RouterLink } 
+              color="primary" 
+              to="/" 
+              sx={{textDecoration:"none"}}
+            >
+              <LogoutOutlined />
+            </Link>
           </IconButton>
         </Grid>
       </Toolbar>

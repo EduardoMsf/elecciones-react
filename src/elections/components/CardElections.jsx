@@ -82,7 +82,7 @@ export const CardElections = (props) => {
         <Button sx={{width:'20%', margin:'15px'}} variant="outlined" color="success" disabled={!checked} onClick={handleVoteSubmit}>
           { exists  ? 'Ya has emitido tu voto' : vote ? 'Ya has emitido tu voto' : 'Confirmar voto'}
         </Button>
-        { vote ? '' : <Button sx={{width:'20%', margin:'15px'}} variant="outlined" color="error" disabled={!checked} onClick={handleVoteReset}>
+        { vote ? '' : <Button sx={exists ? {width:'20%', margin:'15px', display:'none'} : {width:'20%', margin:'15px'} } variant="outlined" color="error" disabled={!checked} onClick={handleVoteReset}>
           Votar de nuevo
         </Button>}
       </Grid>
