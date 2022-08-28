@@ -3,6 +3,7 @@ import { MenuOutlined, LogoutOutlined, HomeOutlined } from "@mui/icons-material"
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
 import TurnedInNotOutlinedIcon from '@mui/icons-material/TurnedInNotOutlined';
+import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import { AppBar, Grid, IconButton, SwipeableDrawer, Toolbar, Typography, Link } from "@mui/material"
 import { useState } from "react"
 
@@ -96,6 +97,16 @@ export const NavBar = ({ drawerWidth }) => {
             sx={{textDecoration:"none"}}
           >
             <AssessmentOutlinedIcon color='white' />
+          </Link> 
+        </IconButton>
+        <IconButton sx={{marginRight: '20px', marginTop: '5px'}}>
+          <Link 
+            component={ RouterLink } 
+            color="primary" 
+            to="/results" 
+            sx={{textDecoration:"none"}}
+          >
+            <AssignmentTurnedInOutlinedIcon color='white' />
           </Link> 
         </IconButton>
         <Grid container direction='row' justifyContent='space-between' alignItems='center'>

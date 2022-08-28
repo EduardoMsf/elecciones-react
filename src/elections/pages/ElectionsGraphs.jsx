@@ -5,7 +5,7 @@ import { ElectionsLayout } from "../layout/electionsLayout"
 export const ElectionGraphs = () => {
   return (
     <ElectionsLayout>
-      <Typography variant='h6'>Graphs</Typography>
+      <Typography align='center' variant='h6'>Graphs</Typography>
     </ElectionsLayout>
   )
 }

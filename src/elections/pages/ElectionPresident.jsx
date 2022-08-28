@@ -5,8 +5,8 @@ import { ElectionsLayout } from "../layout/electionsLayout"
 export const ElectionPresident = () => {
   return (
     <ElectionsLayout>
-      <Typography variant='h6'>Candidatos a Presidencia del Mundo</Typography>
-      <CardElections indexId={1} lastIndexId={4} columns={4} />
+      <Typography align='center' variant='h6'>Candidatos a Presidencia del Mundo</Typography>
+      <CardElections indexId={1} lastIndexId={4} columns={4} title='President' />
     </ElectionsLayout>
   )
 }

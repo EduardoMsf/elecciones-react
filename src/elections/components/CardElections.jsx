@@ -16,9 +16,11 @@ export const CardElections = (props) => {
   const [imageUrl, setImageUrl] = useState('')
   const [userId, setUserId] = useState(-1)
   const [vote, setVote] = useState(false)
-  const { indexId, lastIndexId, columns } = props
+  const { indexId, lastIndexId, columns, title } = props
   const images = getData(indexId, lastIndexId)
-  const handleVoteChanged = (image, index) =>{
+  const localStorageItem = localStorage.getItem(title)
+  const exists = JSON.parse(localStorageItem) != null
+  const handleVoteChanged = (image, index) =>{  
     setChecked(!checked)
     setImageUrl(image)
     setUserId(index)
@@ -29,17 +31,17 @@ export const CardElections = (props) => {
     setUserId(-1)
   }
   const handleVoteSubmit = () =>{
-    Swal.fire('Tu voto ha sido enviado', `${imageUrl}`, 'success')
+    localStorage.setItem(title, JSON.stringify(imageUrl))
     setChecked(true)
-    setImageUrl('')
+    // setImageUrl('')
     setUserId(-1)
     setVote(true)
+    Swal.fire('Tu voto ha sido enviado', `${imageUrl}`, 'success')
   }
-  
   return (
     <Grid display='flex' flexDirection='column'>
       <Grid display='flex'>  
-        { images.map( (image, index) =>
+        { exists ? images.map( (image, index) =>
           (<Card cols={columns} sx={ (checked && userId == index) ? { width:'100%', margin:'16px', borderRadius: '16px', transform: 'scale(1.1)'} : { width:'100%', margin:'16px', borderRadius: '16px'}} key={index}>
             <CardMedia
               sx={(userId != -1 && userId != index ) ? { width: '100%', height: 300, borderRadius: '16px', opacity:'.5' } : { width: '100%', height: 300, borderRadius: '16px' }}
@@ -54,14 +56,31 @@ export const CardElections = (props) => {
               </Typography>
             </CardContent>
             <CardActions >
-              <Button sx={{ width: '100%'}} variant='outlined' color='primary' disabled={checked} onClick={() => handleVoteChanged(image, index)}>Votar</Button>
+              <Button sx={{ width: '100%'}} variant='outlined' color='primary' disabled={true} onClick={() => handleVoteChanged(image, index)}>Votar</Button>
+            </CardActions>
+          </Card>)) : images.map( (image, index) =>
+          (<Card cols={columns} sx={ (checked && userId == index) ? { width:'100%', margin:'16px', borderRadius: '16px', transform: 'scale(1.1)'} : { width:'100%', margin:'16px', borderRadius: '16px'}} key={index}>
+            <CardMedia
+              sx={(userId != -1 && userId != index ) ? { width: '100%', height: 300, borderRadius: '16px', opacity:'.5' } : { width: '100%', height: 300, borderRadius: '16px' }}
+              component="img"
+              alt="green iguana"
+              height="140"
+              image={image}
+            />
+            <CardContent sx={{margin:'0', padding:'5px'}}>
+              <Typography align='center' gutterBottom variant="h5" component="div">
+                Candidato
+              </Typography>
+            </CardContent>
+            <CardActions >
+              <Button sx={{ width: '100%'}} variant='outlined' color='primary' disabled={(checked)} onClick={() => handleVoteChanged(image, index)}>Votar</Button>
             </CardActions>
           </Card>))
         }
       </Grid>
       <Grid display='flex' justifyContent='center'>
         <Button sx={{width:'20%', margin:'15px'}} variant="outlined" color="success" disabled={!checked} onClick={handleVoteSubmit}>
-          {vote ? 'Ya has emitido tu voto' : 'Confirmar voto'}
+          { exists  ? 'Ya has emitido tu voto' : vote ? 'Ya has emitido tu voto' : 'Confirmar voto'}
         </Button>
         { vote ? '' : <Button sx={{width:'20%', margin:'15px'}} variant="outlined" color="error" disabled={!checked} onClick={handleVoteReset}>
           Votar de nuevo
