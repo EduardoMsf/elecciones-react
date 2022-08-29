@@ -1,4 +1,5 @@
 import { Avatar, CardMedia, Grid, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
+import { CardResults } from "../components/CardResults"
 import { ImageElections } from "../components/ImageElections"
 
 import { ElectionsLayout } from "../layout/electionsLayout"
@@ -21,18 +22,18 @@ export const ElectionResults = () => {
   return (
     <ElectionsLayout>
       <Typography align='center' variant='h6'>Mis votos</Typography>
-      <Grid container spacing={1} alignItems='center'>
+      <Grid container spacing={1} justifyContent='center'>
         <Grid item xs={6}>
-          <ImageElections title='Presidente' image={imagePre}/>
+          <CardResults title='Presidente' image={imagePre}/>
         </Grid>
         <Grid item xs={6}>
-          <ImageElections title='Vice Presidente' image={imageVice}/>
+          <CardResults title='Vice' image={imageVice}/>
         </Grid>
         <Grid item xs={6}>
-          <ImageElections title='Senador' image={imageSen}/>
+          <CardResults title='Senador' image={imageSen}/>
         </Grid>
         <Grid item xs={6}>
-          <ImageElections title='DragQueen' image={imageDrag}/>
+          <CardResults title='DragQueen' image={imageDrag}/>
         </Grid>      
       </Grid>
       {/* <List >
