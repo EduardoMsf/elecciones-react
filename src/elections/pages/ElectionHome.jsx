@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material"
+import { Grid, Typography } from "@mui/material"
 
 import { ElectionsLayout } from "../layout/electionsLayout"
 import './estilos.css'
@@ -26,7 +26,24 @@ export const ElectionHome = () => {
 
   return (
     <ElectionsLayout>
-      <Typography align='center' variant='h6'>Home</Typography>
+      <Typography align='center' variant='h4'>Home</Typography>
+      <Grid container sx={{paddingLeft:'50px', paddingTop:'20px', paddingRight:'50px'}}>
+        <Grid item >
+          <Typography variant="h6">¿Por qué es importante votar?</Typography>
+          <Typography sx={{width:'50%'}} variant="body1">
+            No podemos dar por hecho la democracia. El derecho a votar es una de nuestras libertades más importantes como individuos. Garantiza que tenemos voz y que nuestras voces se escuchan. Debemos defender la idea de la democracia, y una de las mejores maneras de hacerlo es votando en las elecciones.
+
+            En un mundo que está cada vez más globalizado, donde estamos más conectados que nunca más allá de las fronteras, existen algunos problemas que sencillamente no pueden resolverse en solitario. El referéndum del Brexit mostró que no podemos dar por hecho a la Unión Europea.</Typography>
+        </Grid>
+        <Grid item>
+          <Typography align="right" variant='h6'>Elecciones Mundiales</Typography>
+          <Typography align="right" sx={{width:'100%', paddingLeft:'50%'}} variant='body1'>
+            Irure qui excepteur culpa sint occaecat sint consectetur enim consectetur dolor consequat pariatur minim. Officia non sit laborum pariatur adipisicing quis exercitation quis. Aliqua ad commodo aute nisi dolor officia incididunt sunt veniam adipisicing enim ipsum et minim. Qui commodo sit minim incididunt anim et sunt. Occaecat incididunt pariatur proident est mollit dolor Lorem reprehenderit quis aliqua. Minim ad veniam aliquip laboris sint.
+
+            Deserunt nisi et ea nulla dolore. Amet non amet deserunt nisi ullamco ullamco Lorem sint aliqua sint ea proident id. Ipsum dolore enim consequat commodo ut.
+          </Typography>
+        </Grid>
+      </Grid>
     </ElectionsLayout>
   )
 }

@@ -21,37 +21,64 @@ import { getData } from '../../helpers';
     Legend
   );
 
-export const options = {
-  responsive: true,
-  plugins:{
-    legeng:{
-      display:true
-    }
-  }
-
-};
-
-export const  randomNum = (max) => {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
-const labels = ['Candidato', 'Candidato', 'Candidato', 'Candidato'];
-const scores = [randomNum(1000),randomNum(1000),randomNum(1000), randomNum(1000),1000]
-
-export const data = {
-  labels,
-  datasets:[
-    {
-      label: 'Votos',
-      data: scores,
-      backgroundColor: 'rgba(53, 162, 235, 0.5)'
-    }
-  ]
-}
 
 export const ElectionsGraphsResults = (props) =>{
-  const { indexId, lastIndexId} = props
+  const { indexId, lastIndexId, candidatosDataSets=[]} = props
   const images = getData(indexId, lastIndexId)
+  const localStorageItems = { ...localStorage }
+  const {Vice} = localStorageItems
+
+  const options = {
+    responsive: true,
+    plugins:{
+      legeng:{
+        display:true
+      }
+    }
+  };
+
+  const  randomNum = (max) => {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  const labels = ['Candidatos a Presidente'];
+  const scores = [randomNum(1000),1000]
+  const scores2 = [randomNum(1000), 1000]
+  const scores3 = [randomNum(1000), 1000]
+  const scores4 = [randomNum(1000), 1000]
+  
+  const data = {
+    labels,
+    datasets:[
+      {
+        label: 'Candidato1',
+        data: scores,
+        backgroundColor: "rgb(" + randomNum(255) + "," + randomNum(255) + "," + randomNum(255) + ")"
+      },
+      {
+        label: 'Candidato2',
+        data: scores2,
+        backgroundColor: "rgb(" + randomNum(255) + "," + randomNum(255) + "," + randomNum(255) + ")"
+      },
+      {
+        label: 'Candidato3',
+        data: scores3,
+        backgroundColor: "rgb(" + randomNum(255) + "," + randomNum(255) + "," + randomNum(255) + ")"
+      },
+      {
+        label: 'Candidato4',
+        data: scores4,
+        backgroundColor: "rgb(" + randomNum(255) + "," + randomNum(255) + "," + randomNum(255) + ")"
+      }
+    ]
+  }
+
+  const setLabels = Object.keys(localStorageItems).map(item=>item)
+
+
+
+  // console.log('labels', setLabels)
+  // console.log('vice', Vice)
   return(
     <Box>
       <Grid container direction='column'
@@ -61,14 +88,17 @@ export const ElectionsGraphsResults = (props) =>{
           <Bar options={options} data={data}/>
         </Grid>
       </Grid>
-      <Grid container direction='row' justifyContent='center' >
+      {/* <Grid container direction='row' justifyContent='center' >
         { labels.map((label, index) =>(
             <Grid item key={index} sx={{marginLeft:'80px', marginRight:'80px'}}>
               <Avatar src={images[index]}/>
+              <Avatar src={images[index+1]}/>
+              <Avatar src={images[index+2]}/>
+              <Avatar src={images[index+3]}/>
             </Grid>
           ))
         }
-      </Grid>
+      </Grid> */}
     </Box>
   )
 }
