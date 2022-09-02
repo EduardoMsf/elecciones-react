@@ -23,16 +23,16 @@ export const ElectionResults = () => {
     <ElectionsLayout>
       <Typography align='center' variant='h6'>Mis votos</Typography>
       <Grid container spacing={1} justifyContent='center'>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <CardResults title='Presidente' image={imagePre}/>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <CardResults title='Vice' image={imageVice}/>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <CardResults title='Senador' image={imageSen}/>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <CardResults title='DragQueen' image={imageDrag}/>
         </Grid>      
       </Grid>

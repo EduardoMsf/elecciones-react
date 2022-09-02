@@ -23,10 +23,6 @@ import { getData } from '../../helpers';
 
 
 export const ElectionsGraphsResults = (props) =>{
-  const { indexId, lastIndexId, candidatosDataSets=[]} = props
-  const images = getData(indexId, lastIndexId)
-  const localStorageItems = { ...localStorage }
-  const {Vice} = localStorageItems
 
   const options = {
     responsive: true,
@@ -73,12 +69,7 @@ export const ElectionsGraphsResults = (props) =>{
     ]
   }
 
-  const setLabels = Object.keys(localStorageItems).map(item=>item)
 
-
-
-  // console.log('labels', setLabels)
-  // console.log('vice', Vice)
   return(
     <Box>
       <Grid container direction='column'
@@ -88,17 +79,6 @@ export const ElectionsGraphsResults = (props) =>{
           <Bar options={options} data={data}/>
         </Grid>
       </Grid>
-      {/* <Grid container direction='row' justifyContent='center' >
-        { labels.map((label, index) =>(
-            <Grid item key={index} sx={{marginLeft:'80px', marginRight:'80px'}}>
-              <Avatar src={images[index]}/>
-              <Avatar src={images[index+1]}/>
-              <Avatar src={images[index+2]}/>
-              <Avatar src={images[index+3]}/>
-            </Grid>
-          ))
-        }
-      </Grid> */}
     </Box>
   )
 }

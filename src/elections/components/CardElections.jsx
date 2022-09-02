@@ -36,11 +36,11 @@ export const CardElections = (props) => {
     // setImageUrl('')
     setUserId(-1)
     setVote(true)
-    Swal.fire('Tu voto ha sido enviado', `${imageUrl}`, 'success')
+    Swal.fire('Tu voto ha sido enviado', `:)`, 'success')
   }
   return (
-    <Grid display='flex' flexDirection='column'>
-      <Grid display='flex'>  
+    <Grid container display='flex' flexDirection='column'>
+      <Grid item display='flex' sx={12}>  
         { exists ? images.map( (image, index) =>
           (<Card cols={columns} sx={ (checked && userId == index) ? { width:'100%', margin:'16px', borderRadius: '16px', transform: 'scale(1.1)'} : { width:'100%', margin:'16px', borderRadius: '16px'}} key={index}>
             <CardMedia
@@ -52,7 +52,7 @@ export const CardElections = (props) => {
             />
             <CardContent sx={{margin:'0', padding:'5px'}}>
               <Typography align='center' gutterBottom variant="h5" component="div">
-                Candidato
+              {`Candidato ${index+1}`}
               </Typography>
             </CardContent>
             <CardActions >
@@ -79,10 +79,10 @@ export const CardElections = (props) => {
         }
       </Grid>
       <Grid display='flex' justifyContent='center'>
-        <Button sx={{width:'20%', margin:'15px'}} variant="outlined" color="success" disabled={!checked} onClick={handleVoteSubmit}>
+        <Button xs={12} sx={{width:'20%', margin:'15px'}} variant="outlined" color="success" disabled={!checked} onClick={handleVoteSubmit}>
           { exists  ? 'Ya has emitido tu voto' : vote ? 'Ya has emitido tu voto' : 'Confirmar voto'}
         </Button>
-        { vote ? '' : <Button sx={exists ? {width:'20%', margin:'15px', display:'none'} : {width:'20%', margin:'15px'} } variant="outlined" color="error" disabled={!checked} onClick={handleVoteReset}>
+        { vote ? '' : <Button xs={12} sx={exists ? {width:'20%', margin:'15px', display:'none'} : {width:'20%', margin:'15px'} } variant="outlined" color="error" disabled={!checked} onClick={handleVoteReset}>
           Votar de nuevo
         </Button>}
       </Grid>

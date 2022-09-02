@@ -41,7 +41,7 @@ export const ElectionHome = () => {
               Deserunt nisi et ea nulla dolore. Amet non amet deserunt nisi ullamco ullamco Lorem sint aliqua sint ea   proident id. Ipsum dolore enim consequat commodo ut.
             </Typography>
           </Grid>
-          <Grid item>
+          <Grid item sx={{gridColumnStart:2, gridColumnEnd:3}}>
             <img src={image2} style={{width:'100%', borderRadius:'16px'}}/>
           </Grid>
         </Grid>

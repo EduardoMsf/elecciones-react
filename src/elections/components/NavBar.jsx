@@ -113,8 +113,8 @@ export const NavBar = ({ drawerWidth }) => {
           </Link> 
         </IconButton>
         <Grid container direction='row' justifyContent='space-between' alignItems='center'>
-          <Typography variant='h6' noWrap component='div'>Elections App</Typography>
-          <IconButton color='black' onClick={handleRemoveVotes}>
+          <Typography variant='h6' noWrap component='div' display={{xs:'none', sm:'contents'}} >Elections App</Typography>
+          <IconButton color='black' onClick={handleRemoveVotes} sx={{marginTop:'5px'}}>
             <Link 
               component={ RouterLink } 
               color="primary" 

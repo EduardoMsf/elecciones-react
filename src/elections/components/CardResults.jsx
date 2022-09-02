@@ -11,7 +11,7 @@ export const CardResults = (props)  =>{
   const { title='', image} = props
   const withOutPhoto = 'https://res.cloudinary.com/dheyjds01/image/upload/v1660281179/journal-mui/frfuxblsuykaazwsn1ff.jpg'
   return (
-    <Card sx={{ width:'70%', marginLeft:'100px', marginTop:'32px' }} >
+    <Card sx={{ width:'70%', marginLeft:'100px', marginTop:'32px' }}>
       <CardMedia
         component="img"
         height="240"
