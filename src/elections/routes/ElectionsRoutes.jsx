@@ -19,6 +19,7 @@ export const ElectionsRoutes = () => {
       <Route path='/drag' element={<ElectionDragQueen />} />
       <Route path='/graphs' element={<ElectionGraphs />} />
       <Route path='/results' element={<ElectionResults />} />
+      <Route path='*' element={ <Navigate to="/" />} />
     </Routes>
   )
 }
