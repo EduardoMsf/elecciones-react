@@ -1,11 +1,12 @@
+import { useState } from "react"
 import { Link as RouterLink } from 'react-router-dom'
+
 import { MenuOutlined, LogoutOutlined, HomeOutlined } from "@mui/icons-material"
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
 import TurnedInNotOutlinedIcon from '@mui/icons-material/TurnedInNotOutlined';
 import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import { AppBar, Grid, IconButton, SwipeableDrawer, Toolbar, Typography, Link } from "@mui/material"
-import { useState } from "react"
 
 
 export const NavBar = ({ drawerWidth }) => {
@@ -19,6 +20,7 @@ export const NavBar = ({ drawerWidth }) => {
   const handleRemoveVotes = () =>{
     localStorage.clear()
   }
+  
   return (
     <AppBar position="fixed" 
       sx={{

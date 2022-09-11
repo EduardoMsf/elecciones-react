@@ -1,4 +1,4 @@
-import { Avatar, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import {
     Chart as ChartJS,
@@ -10,7 +10,6 @@ import {
     Legend,
   } from 'chart.js';
   import { Bar } from 'react-chartjs-2';
-import { getData } from '../../helpers';
 
   ChartJS.register(
     CategoryScale,
