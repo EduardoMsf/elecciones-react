@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material"
 import { CardElections } from "../components/CardElections"
-import { ElectionsLayout } from "../layout/electionsLayout"
+import { ElectionsLayout } from "../layout/ElectionsLayout"
 
 export const ElectionVicePresident = () => {
   return (

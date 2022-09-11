@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 
-import { ElectionsLayout } from "../layout/electionsLayout"
+import { ElectionsLayout } from "../layout/ElectionsLayout"
 
 
 export const ElectionHome = () => {

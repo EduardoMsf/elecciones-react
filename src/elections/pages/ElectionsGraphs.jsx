@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material"
 import { ElectionsGraphsResults } from "../components/ElectionsGraphsResults"
 
-import { ElectionsLayout } from "../layout/electionsLayout"
+import { ElectionsLayout } from "../layout/ElectionsLayout"
 
 export const ElectionGraphs = () => {
   return (
