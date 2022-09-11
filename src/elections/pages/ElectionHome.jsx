@@ -19,6 +19,7 @@ export const ElectionHome = () => {
               Irure qui excepteur culpa sint occaecat sint consectetur enim consectetur dolor consequat pariatur   minim. Officia non sit laborum pariatur adipisicing quis exercitation quis. Aliqua ad commodo aute nisi   dolor officia incididunt sunt veniam adipisicing enim ipsum et minim. Qui commodo sit minim incididunt   anim et sunt. Occaecat incididunt pariatur proident est mollit dolor Lorem reprehenderit quis aliqua.   Minim ad veniam aliquip laboris sint.
   
               Deserunt nisi et ea nulla dolore. Amet non amet deserunt nisi ullamco ullamco Lorem sint aliqua sint ea   proident id. Ipsum dolore enim consequat commodo ut.
+              Prueba de despliegue continuo
             </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={6} sx={{padding:'6px'}}>
