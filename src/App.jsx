@@ -1,4 +1,3 @@
-import { ElectionsLayout } from './elections/layout/electionsLayout'
 import { ElectionsRoutes } from './elections/routes/ElectionsRoutes'
 import { AppTheme } from './theme'
 
